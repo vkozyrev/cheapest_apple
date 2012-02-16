@@ -1,0 +1,82 @@
+@charset "utf-8";
+body {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	background-image: url(http://www.cheapestapple.com/site_media/temp/images/gradient_left.png);
+	background-repeat: repeat-y;
+	
+}
+
+#wrapper {
+}
+
+#container {
+	width: 1000px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+#boxes {
+}
+
+#contentbox {
+	position: relative;
+	margin-top: 5px;
+	padding: 0;
+	text-align: left;
+	background-image: url(http://www.cheapestapple.com/site_media/temp/DayOneFlyerFront.jpg);
+	background-repeat: no-repeat;
+	width: 300px;
+	float: left;
+	margin: 12px;
+}
+
+#content {
+}
+
+#imagearea {
+}
+
+#image {	
+	width: 300px;
+	height: 494px;
+}
+
+#textarea {
+	height: 80px;
+	background-color: #2f2f2f;
+	margin-left: 2px;
+	margin-right: 4px;
+}
+
+#text {
+	padding-top: 10px;
+}
+
+#buytickets {
+	margin-left: 10px;
+	height: 29px;
+	width: 129px;
+	background-image:url(http://www.cheapestapple.com/site_media/temp/images/buy_tickets.gif);
+	background-repeat: no-repeat;
+}
+
+#buytickets:hover {
+	background-image: url(http://www.cheapestapple.com/site_media/temp/images/hover_buy_tickets.gif);
+	height: 29px;
+	width: 129px;
+}
+#rsvpfacebook {
+	margin-left: 10px;
+	height: 29px;
+	width: 188px;
+	background-image: url(http://www.cheapestapple.com/site_media/temp/images/rsvp_facebook.gif);
+	background-repeat: no-repeat;
+}
+
+#rsvpfacebook:hover {
+	background-image: url(http://www.cheapestapple.com/site_media/temp/images/hove_rsvp_facebook.gif);
+	height: 29px;
+	width: 188px;
+}

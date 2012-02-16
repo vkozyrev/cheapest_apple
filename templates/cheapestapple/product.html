@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="{{ parent.title }}, {% for child in child_set %} {{ child.title }}, {% endfor %}"/>
+<title>Cheapest Apple - {{ parent.title }}</title>
+<link rel="stylesheet" type="text/css" href="/site_media/css/cheapestapple.css" media="all" />
+	
+</head>
+
+<body>
+	<div id="main_page" style="height:{{ height }}px">
+	<h1 class="title">Cheapest Apple</h1>
+		<div id="break_box"></div>
+		<div id="top_message_box"> 
+			<h1 class="top_message">{{ parent.message }}</h1>
+		</div>
+		{% for child in child_set %}
+			<div id="{{ child.title }}" class="product_box" onclick="location.href='/price/{{ child.id }}'">
+				<div class="product_pic"><img src="/site_media/{{ child.image }}" width="140px" height="112px" /></div>
+				<div class="product_title"><h1 class="prod_title"><a class="prod_link" href="/price/{{ child.id }}">{{ child.title }}</a></h1></div>
+				<div class="product_line"><h1 class="prod_desc">{{ child.desc_line_1 }}</h1></div>
+				<div class="product_line"><h1 class="prod_desc">{{ child.desc_line_2 }}</h1></div>
+			</div>
+		{% endfor %}
+	</div>
+	<script src="/site_media/js/jquery-1.4.2.min.js" type="text/javascript"></script>
+	<script src="/site_media/js/cheap.js" type="text/javascript"></script>
+</body>
+</html>

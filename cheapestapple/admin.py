@@ -1,0 +1,27 @@
+from cheapest_apple.cheapestapple.models import Box, Price, Product, Store, Review, ReviewSite
+from django.contrib import admin
+
+class BoxAdmin(admin.ModelAdmin):
+    list_display = ('title', 'message')
+    fieldsets = [
+                 (None,     {'fields' : ['title', 'image', 'parent', 'message']}),
+                 ('Type 1', {'fields' : ['child']}),
+                 ('Type 2', {'fields' : ['is_product_box', 'product_box']})
+                 ]
+
+class PriceAdmin(admin.ModelAdmin):
+    list_display = ('id', 'link', 'price')
+    
+class ProductAdmin(admin.ModelAdmin):
+    list_display = ('title', 'desc_line_1', 'desc_line_2')
+
+class StoreAdmin(admin.ModelAdmin):
+    list_display = ('etailer', 'url')
+    
+    
+admin.site.register(Box, BoxAdmin)
+admin.site.register(Price, PriceAdmin)
+admin.site.register(Product, ProductAdmin)
+admin.site.register(Store, StoreAdmin)
+admin.site.register(Review)
+admin.site.register(ReviewSite)

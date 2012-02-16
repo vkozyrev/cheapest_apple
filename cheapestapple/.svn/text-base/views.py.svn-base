@@ -1,0 +1,64 @@
+# Create your views here.
+from django.db import models
+from django.shortcuts import render_to_response, get_object_or_404
+from django.http import Http404
+from django.conf.urls.defaults import *
+from django.template import RequestContext
+from django.http import HttpResponseRedirect, HttpResponse
+from django.core.urlresolvers import reverse
+from django import forms
+from django.utils import simplejson
+from django.core import serializers
+import os, datetime, hashlib, time, urllib2
+
+from myproject.cheapestapple.models import Box, Product, Price, Store
+
+ROWS = 3
+
+def index(request):
+    return render_to_response('cheapestapple/index2.html')
+
+def sara(request):
+    return HttpResponse("Hi SARA!!!! -Vlad")
+
+def noJSindex(request, page_id, type):
+    if type == 'box':
+        parent = Box.objects.get(id=page_id)
+        child_set = parent.child.all()
+        height = ((child_set.count() / ROWS) * 320) + 100
+        if child_set.count() % ROWS != 0:
+            height = height + 320;
+        return render_to_response('cheapestapple/index.html', {'parent': parent, 'child_set': child_set, 'height': height})
+    if type == 'product':
+        parent = Box.objects.get(id=page_id)
+        child_set = parent.product_box.all()
+        height = ((child_set.count()) * 170) + 120
+        return render_to_response('cheapestapple/product.html', {'parent': parent, 'child_set': child_set, 'height': height})
+    if type == 'price':
+        parent = Product.objects.get(id=page_id)
+        child_set = parent.prices.all().order_by('price')
+        height = ((child_set.count()) * 60) + 290
+        return render_to_response('cheapestapple/price.html', {'parent': parent, 'child_set': child_set, 'height': height})
+    else:
+        raise Http404()
+
+def getTree(request):
+    if request.method == 'POST':
+        querySet = Box.objects.all();
+        jsonSerializer = serializers.get_serializer("json")()
+        return HttpResponse(jsonSerializer.serialize(querySet))
+    return HttpResponse('ERROR!')
+
+def getProducts(request):
+    if request.method == 'POST':
+        querySet = Product.objects.all();
+        jsonSerializer = serializers.get_serializer("json")()
+        return HttpResponse(jsonSerializer.serialize(querySet))
+    return HttpResponse('ERROR!')
+
+def getPrices(request):
+    if request.method == 'POST':
+        querySet = Price.objects.all();
+        jsonSerializer = serializers.get_serializer("json")()
+        return HttpResponse(jsonSerializer.serialize(querySet))
+    return HttpResponse('ERROR!')

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/89/cheapest_apple/myproject/cheapestapple
+END
+tests.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/89/cheapest_apple/myproject/cheapestapple/tests.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/89/cheapest_apple/myproject/cheapestapple/__init__.py
+END
+admin.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/89/cheapest_apple/myproject/cheapestapple/admin.py
+END
+skimmer.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/89/cheapest_apple/myproject/cheapestapple/skimmer.py
+END
+views.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/89/cheapest_apple/myproject/cheapestapple/views.py
+END
+models.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/89/cheapest_apple/myproject/cheapestapple/models.py
+END
+BeautifulSoup.py
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/89/cheapest_apple/myproject/cheapestapple/BeautifulSoup.py
+END

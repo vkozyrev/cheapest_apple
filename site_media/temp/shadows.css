@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* CSS Document */
+
+#tlc, #trc, #blc, #brc
+	{
+	background-color: transparent;
+	background-repeat: no-repeat;
+	}
+
+#tlc
+	{
+	
+	background-position: 0% 0%;
+	}
+
+#trc
+	{
+	background-position: 100% 0%;
+	background-image: url(http://www.cheapestapple.com/site_media/temp/images/top_right_corner.png);
+	}
+	
+#blc
+	{
+	background-position: 0% 100%;
+	background-image: url(http://www.cheapestapple.com/site_media/temp/images/bottom_left_corner.gif);
+	}
+
+#brc
+	{
+	background-position: 100% 100%;
+	background-image: url(http://www.cheapestapple.com/site_media/temp/images/bottom_right_corner.gif);
+	}
+
+#tb, #bb
+	{
+	background-color: transparent;
+	background-repeat: repeat-x;
+	}
+			
+#tb
+	{
+	background-position: 0% 0%;
+	background-image: url(http://www.cheapestapple.com/site_media/temp/images/top_shadow.gif);
+	}
+
+#bb
+	{
+	background-position: 50% 100%;
+	background-image: url(http://www.cheapestapple.com/site_media/temp/images/bottom_shadow.gif);
+	}
+	
+#rb
+	{
+	background-position: 100% 0%;
+	background-repeat: repeat-y;
+	background-image: url(http://www.cheapestapple.com/site_media/temp/images/right_shadow.gif);
+	}
+
+#lb
+	{
+	background-position: 0% 100%;
+	background-repeat: repeat-y;
+	background-image: url(http://www.cheapestapple.com/site_media/temp/images/left_shadow.gif);
+	}

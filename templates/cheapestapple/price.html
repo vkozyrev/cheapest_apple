@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="{{ parent.title }}, {% for child in child_set %} {{ child.etailer.etailer }}, {% endfor %}"/>
+<title>Cheapest Apple - {{ parent.title }}</title>
+<link rel="stylesheet" type="text/css" href="/site_media/css/cheapestapple.css" media="all" />
+	
+</head>
+
+<body>
+	<div id="main_page" style="height:{{ height }}px">
+	<h1 class="title">Cheapest Apple</h1>
+		<div id="break_box"></div>
+		<div id="top_message_box"> 
+			<h1 class="top_message">Pick the store you want...</h1>
+		</div>
+		<div id="{{ parent.title }}" class="product_box2">
+			<div class="product_pic"><img src="/site_media/{{ parent.image }}" width="140px" height="112px" /></div>
+			<div class="product_title"><h1 class="prod_title">{{ parent.title }}</h1></div>
+			<div class="product_line"><h1 class="prod_desc">{{ parent.desc_line_1 }}</h1></div>
+			<div class="product_line"><h1 class="prod_desc">{{ parent.desc_line_2 }}</h1></div>
+		</div>
+		<div id="price_container">
+			<div id="product_message">
+				<h2 class="category">Prices</h2>
+			</div>
+			{% for child in child_set %}
+				<div id="{{ child.etailer.etailer }}" class="price_box" onclick="vglnk.click('{{ child.link }}');" style="background-color: rgb(60, 60, 60); ">
+					<div class="price_pic"><img src="/site_media/{{ child.etailer.image }}" width="140px" /></div>
+					<div class="price_message" onclick="vglnk.click('{{ child.link }}')"><h1 class="price"><a class="price_link" href="{{ child.link }}">Buy at {{ child.etailer.etailer }} for {{ child.price|floatformat:2 }}</a></h1></div>
+				</div>
+			{% endfor %}
+		</div>
+		<div id="review_container">
+			<div id="review_message">
+				<h2 class="category">Reviews</h2>
+			</div>
+			{% for child in review_set %}
+				<div class="review_box" onclick="location.href='{{ child.link }}';"">
+					<div class="price_pic"><img src="/site_media/{{ child.site_name.image }}" width="140px" /></div>
+					{% if child.score == 0 %}
+						<div class="star_pic"><img src="/site_media/img/0star.png" width="240px" /></div>
+					{% endif %}
+					{% if child.score == 1 or child.score == 2 %}
+						<div class="star_pic"><img src="/site_media/img/1star.png" width="240px" /></div>
+					{% endif %}
+					{% if child.score == 3 or child.score == 4 %}
+						<div class="star_pic"><img src="/site_media/img/2star.png" width="240px" /></div>
+					{% endif %}
+					{% if child.score == 5 or child.score == 6 %}
+						<div class="star_pic"><img src="/site_media/img/3star.png" width="240px" /></div>
+					{% endif %}
+					{% if child.score == 7 or child.score == 8 %}
+						<div class="star_pic"><img src="/site_media/img/4star.png" width="240px" /></div>
+					{% endif %}
+					{% if child.score == 9 or child.score == 10 %}
+						<div class="star_pic"><img src="/site_media/img/5star.png" width="240px" /></div>
+					{% endif %}
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+	<script src="/site_media/js/jquery-1.4.2.min.js" type="text/javascript"></script>
+	<script src="/site_media/js/cheap.js" type="text/javascript"></script>
+	<script type="text/javascript">
+  var vglnk = { api_url: '//api.viglink.com/api',
+                key: 'ae50492a170b4700aaa66bd836166041' };
+
+  (function(d, t) {
+    var s = d.createElement(t); s.type = 'text/javascript'; s.async = true;
+    s.src = ('https:' == document.location.protocol ? vglnk.api_url :
+             '//cdn.viglink.com/api') + '/vglnk.js';
+    var r = d.getElementsByTagName(t)[0]; r.parentNode.insertBefore(s, r);
+  }(document, 'script'));
+  
+</script>
+</body>
+</html>
